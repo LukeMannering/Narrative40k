@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Atomic Boilerplate</string>
+    <string name="log_tag_base">atomic_</string>
+    <string name="shared_preference_file">jpsharedprefs</string>
+
+    <!-- Logging -->
+    <bool name="crashlytics_enabled">true</bool>
+    <bool name="firebase_analytics_enabled">true</bool>
+    <bool name="send_custom_logging_to_logcat">false</bool>
+    <bool name="send_custom_exceptions_to_crashlytics_as_non_fatal">true</bool>
+
+    <!-- Notifications -->
+    <string name="default_notification_channel_id">General notifications</string>
+
+    <!-- APIs -->
+    <string name="jp_api_base_url">http://www.atomicmedia.co.uk/api/</string>
+
+</resources>

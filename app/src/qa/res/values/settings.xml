@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">TEST AtomicMedia</string>
+
+    <!-- Logging -->
+    <bool name="firebase_analytics_enabled">true</bool>
+    <bool name="crashlytics_enabled">true</bool>
+    <bool name="send_custom_logging_to_logcat">true</bool>
+    <bool name="send_custom_exceptions_to_crashlytics_as_non_fatal">true</bool>
+
+    <!-- APIs -->
+    <string name="jp_api_base_url">http://staging.atomicmedia.co.uk/api/</string>
+
+</resources>

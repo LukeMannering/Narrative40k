@@ -1,0 +1,126 @@
+buildscript {
+    repositories {
+        maven { url 'https://maven.fabric.io/public' }
+    }
+
+    dependencies {
+        classpath 'io.fabric.tools:gradle:1.+'
+    }
+}
+apply plugin: 'com.android.application'
+//apply plugin: 'io.fabric'
+
+//repositories {
+//    maven { url 'https://maven.fabric.io/public' }
+//}
+
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "uk.co.atomicmedia.boilerplate"
+        minSdkVersion 21
+        targetSdkVersion 27
+        versionCode 1
+        versionName "0.1"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        setProperty("archivesBaseName", "v$versionName")
+    }
+    buildTypes {
+        release {
+            shrinkResources true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            debuggable false
+            versionNameSuffix '_release'
+        }
+        debug {
+            shrinkResources false
+            minifyEnabled false
+            applicationIdSuffix '.debug'
+            versionNameSuffix '_debug'
+        }
+        qa {
+            shrinkResources true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            debuggable false
+            applicationIdSuffix '.qa'
+            versionNameSuffix '_qa'
+        }
+    }
+
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
+
+    sourceSets { main { res.srcDirs = ['src/main/res'] } }
+    dataBinding {
+        enabled = true
+    }
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //-----------------------
+    // Android support library
+    //-----------------------
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha2'
+
+    //-----------------------
+    // Architecture Components
+    //-----------------------
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
+    implementation 'androidx.room:room-runtime:2.1.0-alpha01'
+    annotationProcessor 'androidx.room:room-compiler:2.1.0-alpha01'
+
+    //--------------------
+    // App specific dependencies
+    //--------------------
+    implementation 'com.google.firebase:firebase-core:16.0.5'
+    implementation 'com.google.firebase:firebase-messaging:17.3.4'
+    implementation('com.crashlytics.sdk.android:crashlytics:2.9.5@aar') {
+        transitive = true;
+    }
+    implementation 'org.apache.commons:commons-lang3:3.7'
+    def parseVersion = "1.18.5"
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation 'com.google.code.gson:gson:2.8.5'
+
+    //--------------------
+    // Dagger2 - dependency injection
+    //--------------------
+    def dagger_version = "2.16"
+    implementation "com.google.dagger:dagger:$dagger_version"
+    implementation "com.google.dagger:dagger-android:$dagger_version"
+    implementation "com.google.dagger:dagger-android-support:$dagger_version"
+    // If using the support libraries
+    annotationProcessor "com.google.dagger:dagger-android-processor:$dagger_version"
+    annotationProcessor "com.google.dagger:dagger-compiler:$dagger_version"
+
+    //--------------------------
+    // Unit testing dependencies
+    //--------------------------
+    testImplementation 'junit:junit:4.12'
+
+    //--------------------------
+    // Instrumented test dependencies
+    //--------------------------
+    androidTestImplementation 'androidx.test:runner:1.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+    implementation 'android.arch.navigation:navigation-fragment:1.0.0-alpha07'
+}
+
+//apply plugin: 'com.google.gms.google-services'
