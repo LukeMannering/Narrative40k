@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">Atomic Boilerplate</string>
-    <string name="log_tag_base">atomic_</string>
-    <string name="shared_preference_file">jpsharedprefs</string>
+    <string name="app_name">Narrative40k</string>
+    <string name="log_tag_base">lukemannering_</string>
+    <string name="shared_preference_file">sharedprefs</string>
 
     <!-- Logging -->
     <bool name="crashlytics_enabled">true</bool>
@@ -11,8 +11,5 @@
 
     <!-- Notifications -->
     <string name="default_notification_channel_id">General notifications</string>
-
-    <!-- APIs -->
-    <string name="jp_api_base_url">http://www.atomicmedia.co.uk/api/</string>
 
 </resources>

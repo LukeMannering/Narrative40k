@@ -1,10 +1,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="uk.co.atomicmedia.boilerplate.ui.MainActivity">
+    tools:context="uk.co.lukemannering.narrative40k.ui.MainActivity">
     <item
         android:id="@+id/action_settings"
-        android:icon="@drawable/ic_settings_white_outline"
+        android:icon="@drawable/baseline_settings_white_48"
         android:orderInCategory="100"
         android:title="@string/action_settings"
         app:showAsAction="always" />

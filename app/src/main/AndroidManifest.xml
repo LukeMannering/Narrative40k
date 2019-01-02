@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="uk.co.atomicmedia.boilerplate">
+    package="uk.co.lukemannering.narrative40k">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name="uk.co.atomicmedia.boilerplate.JPApplication"
+        android:name="uk.co.lukemannering.narrative40k.Narrative40App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -14,7 +14,7 @@
         android:theme="@style/AppTheme"
         >
         <activity
-            android:name="uk.co.atomicmedia.boilerplate.ui.MainActivity"
+            android:name="uk.co.lukemannering.narrative40k.ui.MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan"
